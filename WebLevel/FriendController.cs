@@ -44,7 +44,7 @@ public class FriendController:ControllerBase
     }
 
     [HttpPost("addWithWish")]
-    public async Task<IActionResult> AddFriendWithWish(FriendDTO dto)
+    public async Task<IActionResult> AddFriendWithWish(FriendDTO dto, InterestAndWishDTO WishDto)
     {
         var addFriendResult = await _friendService.AddFriendAsync(dto);
         if (!addFriendResult)
@@ -68,8 +68,8 @@ public class FriendController:ControllerBase
         var interestAndWishDto = new InterestAndWishDTO
         {
             IdWish = wishIdDto.IdWish, // Предполагаем, что WishIdDTO содержит поле WishId
-            Interest = dto.FriendUsername,
-            Wish = wishIdDto.IdWish;
+            Interest = WishDto.Interest,
+            Wish = WishDto.Wish
         };
 
         var addWishResult = await _friendService.AddWishAndInterest(interestAndWishDto);
