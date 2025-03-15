@@ -11,4 +11,8 @@
         <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0-preview.1.25080.5" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Bussines.Services\Bussines.Services.csproj" />
+    </ItemGroup>
+
 </Project>
