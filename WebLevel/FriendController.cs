@@ -43,8 +43,7 @@ public class FriendController:ControllerBase
         return Ok(friends);
     }
 
-    [HttpPost("addWithWish")]
-    [HttpPost("addWithWish")]
+      [HttpPost("addWithWish")]
     public async Task<IActionResult> AddFriendWithWish([FromBody] AddFriendWithWishDTO request)
     {
         var addFriendResult = await _friendService.AddFriendAsync(request.Friend);
