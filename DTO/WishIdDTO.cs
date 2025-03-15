@@ -2,5 +2,5 @@
 
 public class WishIdDTO
 {
-    public int IdWish { get; set; }
+    public int? IdWish { get; set; }
 }
