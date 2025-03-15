@@ -33,7 +33,7 @@ public class FriendController:ControllerBase
         return result ? Ok(new { message = "Friend updated successfully" }) : BadRequest(new { message = "Failed to update friend" });
     }
     [HttpGet("list/{appId:guid}")]
-    public async Task<IActionResult> GetFriendsByAppId(Guid appId)
+    public async Task<IActionResult> GetFriendsByAppId([FromBody]  Guid appId)
     {
         var friends = await _friendService.GetFriendsAsync(new AppIdDTO { Id = appId });
         if (friends.Count == 0)
@@ -44,9 +44,10 @@ public class FriendController:ControllerBase
     }
 
     [HttpPost("addWithWish")]
-    public async Task<IActionResult> AddFriendWithWish(FriendDTO dto, InterestAndWishDTO WishDto)
+    [HttpPost("addWithWish")]
+    public async Task<IActionResult> AddFriendWithWish([FromBody] AddFriendWithWishDTO request)
     {
-        var addFriendResult = await _friendService.AddFriendAsync(dto);
+        var addFriendResult = await _friendService.AddFriendAsync(request.Friend);
         if (!addFriendResult)
         {
             return BadRequest(new { message = "Failed to add friend" });
@@ -55,8 +56,8 @@ public class FriendController:ControllerBase
         // Шаг 2: Получение WishId по Username и AppID
         var wishIdDto = await _friendService.GetWishIdAsync(new AppIDFriendDTO
         {
-            Username = dto.FriendUsername, // Предполагаем, что FriendDTO содержит поле Username
-            AppID = dto.AppId // И поле AppID
+            Username = request.Friend.FriendUsername, // Предполагаем, что FriendDTO содержит поле Username
+            AppID = request.Friend.AppId // И поле AppID
         });
 
         if (wishIdDto == null)
@@ -68,8 +69,8 @@ public class FriendController:ControllerBase
         var interestAndWishDto = new InterestAndWishDTO
         {
             IdWish = wishIdDto.IdWish, // Предполагаем, что WishIdDTO содержит поле WishId
-            Interest = WishDto.Interest,
-            Wish = WishDto.Wish
+            Interest = request.Wish.Interest,
+            Wish = request.Wish.Wish
         };
 
         var addWishResult = await _friendService.AddWishAndInterest(interestAndWishDto);
@@ -81,6 +82,7 @@ public class FriendController:ControllerBase
         // Возвращаем успешный результат
         return Ok(new { message = "Friend added, wish ID retrieved, and wish/interest added successfully" });
     }
+
     
     
 }
