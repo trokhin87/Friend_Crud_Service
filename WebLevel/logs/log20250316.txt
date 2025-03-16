@@ -1,0 +1,4 @@
+2025-03-16 15:41:29.172 +03:00 [INF] Now listening on: http://localhost:5162
+2025-03-16 15:41:29.198 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-16 15:41:29.199 +03:00 [INF] Hosting environment: Development
+2025-03-16 15:41:29.199 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\Friend_Crud_Service\WebLevel
