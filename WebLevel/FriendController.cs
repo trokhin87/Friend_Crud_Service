@@ -33,7 +33,7 @@ public class FriendController:ControllerBase
         return result ? Ok(new { message = "Friend updated successfully" }) : BadRequest(new { message = "Failed to update friend" });
     }
     [HttpGet("list/{appId:guid}")]
-    public async Task<IActionResult> GetFriendsByAppId([FromBody]  Guid appId)
+    public async Task<IActionResult> GetFriendsByAppId(Guid appId)
     {
         var friends = await _friendService.GetFriendsAsync(new AppIdDTO { Id = appId });
         if (friends.Count == 0)
@@ -59,11 +59,10 @@ public class FriendController:ControllerBase
             AppID = request.Friend.AppId // И поле AppID
         });
 
-        if (wishIdDto == null)
+        if (wishIdDto?.IdWish == null)
         {
             return NotFound(new { message = "Wish ID not found" });
         }
-
         // Шаг 3: Добавление интересов и пожеланий
         var interestAndWishDto = new InterestAndWishDTO
         {

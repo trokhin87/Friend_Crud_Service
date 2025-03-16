@@ -20,11 +20,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddOpenApi();
 
 // Настройка HttpClient
-builder.Services.AddHttpClient<Service>(client =>
+var baseUrl = builder.Configuration["ProxyMicroservice:BaseUrl"];
+if (string.IsNullOrEmpty(baseUrl))
 {
-    var baseUrl = builder.Configuration["ProxyMicroservice:BaseUrl"];
-    client.BaseAddress = new Uri(baseUrl);
-});
+    throw new InvalidOperationException("Base URL for ProxyMicroservice is not set in configuration.");
+}
+builder.Services.AddHttpClient<Service>(client => client.BaseAddress = new Uri(baseUrl));
 
 var app = builder.Build();
 
