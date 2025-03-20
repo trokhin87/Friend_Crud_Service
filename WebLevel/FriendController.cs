@@ -21,9 +21,9 @@ public class FriendController:ControllerBase
         return result ? Ok(new { message = "Friend added successfully" }) : BadRequest(new { message = "Failed to add friend" });
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> RemoveFriend([FromBody] RemoveFriendDTO removeFriendDto)
+    public async Task<IActionResult> RemoveFriend(DeleteFriendDto deleteFriendDto)
     {
-        var result = await _friendService.RemoveFriendAsync(removeFriendDto);
+        var result = await _friendService.RemoveFriendAsync(deleteFriendDto);
         return result ? Ok(new { message = "Friend removed successfully" }) : BadRequest(new { message = "Failed to remove friend" });
     }
     [HttpPut("update")]

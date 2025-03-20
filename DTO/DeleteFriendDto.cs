@@ -1,7 +1,7 @@
 ﻿namespace DTO;
 
-public class RemoveFriendDTO
+public class DeleteFriendDto
 {
-    public Guid Id { get; set; }
+    public Guid AppId { get; set; }
     public string FriendName { get; set; } = null!; 
 }

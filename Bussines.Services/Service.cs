@@ -26,11 +26,17 @@ public class Service:IFriendService
         return repsonse.IsSuccessStatusCode;
     }
 
-    public async Task<bool> RemoveFriendAsync(RemoveFriendDTO dto)
+    public async Task<bool> RemoveFriendAsync(DeleteFriendDto dto)
     {
         var json = JsonSerializer.Serialize(dto);
         var content = new StringContent(json,Encoding.UTF8,"application/json");
-        var response= await  _httpClient.DeleteAsync($"{_baseUrl}/api/Friends/delete/");
+        var request = new HttpRequestMessage
+        {
+            Method = HttpMethod.Delete,
+            RequestUri = new Uri($"{_baseUrl}/api/Friends/delete"),
+            Content = content
+        };
+        var response = await _httpClient.SendAsync(request);
         return response.IsSuccessStatusCode;
     }
 
