@@ -8,6 +8,6 @@ public class RemoveFriendDtoValidator:AbstractValidator<DeleteFriendDto>
     public RemoveFriendDtoValidator()
     {
         RuleFor(x => x.AppId).NotEmpty().WithMessage("AppId is required.");
-        RuleFor(x => x.FriendName).NotEmpty().WithMessage("Username is required.");
+        RuleFor(x => x.FriendUsername).NotEmpty().WithMessage("Username is required.");
     }
 }

@@ -3,5 +3,5 @@
 public class DeleteFriendDto
 {
     public Guid AppId { get; set; }
-    public string FriendName { get; set; } = null!; 
+    public string FriendUsername { get; set; } = null!; 
 }
