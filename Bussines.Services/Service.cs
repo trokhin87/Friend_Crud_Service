@@ -73,8 +73,9 @@ public class Service:IFriendService
 
     private async Task<bool> SetPozdrIdToFriendAsync(FriendDTO dto ,int pozdrId)
     {
-        var response=await  _httpClient.PostAsJsonAsync(_baseUrl + "/api/Friends/pozdrik/create",dto);
-
+        AddPozdrIdDto addPozdrIdDto = new AddPozdrIdDto {AppId = dto.AppId,FriendUsername = dto.FriendUsername,PozdrikId = pozdrId};
+        var response=await  _httpClient.PostAsJsonAsync(_baseUrl + "/api/Friends/SetpozdrId",addPozdrIdDto);
+        return response.IsSuccessStatusCode;
     }
     
     public async Task<bool> AddWishAndInterestAsync(InterestAndWishDTO dto, FriendDTO friendDto)
@@ -90,7 +91,8 @@ public class Service:IFriendService
         var json= JsonSerializer.Serialize(dto);
         var content=new StringContent(json,Encoding.UTF8,"application/json");
         var response=await _httpClient.PostAsync($"{_baseUrl}/api/Friends/pozdrik/add",content);
-        return response.IsSuccessStatusCode;
+        var secondOperation = await SetPozdrIdToFriendAsync(friendDto, dto.IdWish.Value);
+        return response.IsSuccessStatusCode && secondOperation;
     }
 
     public async Task<List<FriendDTO>> GetFriendsAsync(AppIdDTO dto)
