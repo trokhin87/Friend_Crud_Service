@@ -4,6 +4,8 @@ using DTO;
 using Interfaces;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http;
+using System.Net.Http.Json;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Bussines.Services;
 
@@ -59,8 +61,32 @@ public class Service:IFriendService
         return JsonSerializer.Deserialize<WishIdDTO>(json,new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
     }
 
-    public async Task<bool> AddWishAndInterest(InterestAndWishDTO dto)
+    private async Task<PozdrikIdDto?> CreateWishIdAsync(InterestAndWishDTO dto)
     {
+        var response = _httpClient.PostAsJsonAsync(_baseUrl + "/api/Friends/pozdrik/create",dto);
+        if (!response.IsCompletedSuccessfully)
+        {
+            return null;
+        }
+        return await response.Result.Content.ReadFromJsonAsync<PozdrikIdDto>();
+    }
+
+    private async Task<bool> SetPozdrIdToFriendAsync(FriendDTO dto ,int pozdrId)
+    {
+        var response=await  _httpClient.PostAsJsonAsync(_baseUrl + "/api/Friends/pozdrik/create",dto);
+
+    }
+    
+    public async Task<bool> AddWishAndInterestAsync(InterestAndWishDTO dto, FriendDTO friendDto)
+    {
+        PozdrikIdDto? pozdrikIdDto = await CreateWishIdAsync(dto);
+
+        if (pozdrikIdDto != null) dto.IdWish = pozdrikIdDto._pozdrikId;
+        else
+        {
+            throw new Exception("PozdrikIdDto is null");
+        }
+
         var json= JsonSerializer.Serialize(dto);
         var content=new StringContent(json,Encoding.UTF8,"application/json");
         var response=await _httpClient.PostAsync($"{_baseUrl}/api/Friends/pozdrik/add",content);
@@ -77,4 +103,6 @@ public class Service:IFriendService
         var json=await response.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<List<FriendDTO>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
     }
+    
+    
 }

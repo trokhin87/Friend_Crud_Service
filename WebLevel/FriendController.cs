@@ -71,7 +71,7 @@ public class FriendController:ControllerBase
             Wish = request.Wish.Wish
         };
 
-        var addWishResult = await _friendService.AddWishAndInterest(interestAndWishDto);
+        var addWishResult = await _friendService.AddWishAndInterestAsync(interestAndWishDto);
         if (!addWishResult)
         {
             return BadRequest(new { message = "Failed to add wish and interest" });

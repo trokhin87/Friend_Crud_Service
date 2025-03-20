@@ -8,6 +8,6 @@ public interface IFriendService
     Task<bool> RemoveFriendAsync(DeleteFriendDto dto);
     Task <bool> UpdateFriendAsync(FriendDTO dto);
     Task<WishIdDTO> GetWishIdAsync(AppIDFriendDTO dto);
-    Task<bool> AddWishAndInterest(InterestAndWishDTO dto);
+    Task<bool> AddWishAndInterestAsync(InterestAndWishDTO dto);
     Task<List<FriendDTO>> GetFriendsAsync(AppIdDTO dto);
 }
