@@ -3,5 +3,5 @@
 public class AddFriendWithWishDTO
 {
     public FriendDTO Friend { get; set; }
-    public InterestAndWishDTO Wish { get; set; }
+    public AddIntAndPozhDto Pozh { get; set; }
 }

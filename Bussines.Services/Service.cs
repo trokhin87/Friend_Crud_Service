@@ -61,14 +61,16 @@ public class Service:IFriendService
         return JsonSerializer.Deserialize<WishIdDTO>(json,new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
     }
 
-    private async Task<PozdrikIdDto?> CreateWishIdAsync(InterestAndWishDTO dto)
+    //добавляются интересы и пожелания, отдают id поздрика
+    private async Task<PozdrikIdDto?> CreateWishIdAsync(AddIntAndPozhDto dto)
     {
-        var response = _httpClient.PostAsJsonAsync(_baseUrl + "/api/Friends/pozdrik/create",dto);
-        if (!response.IsCompletedSuccessfully)
+        var response =await _httpClient.PostAsJsonAsync(_baseUrl + "/api/Friends/pozdrik/create",dto);
+        if (!response.IsSuccessStatusCode)
         {
             return null;
+            
         }
-        return await response.Result.Content.ReadFromJsonAsync<PozdrikIdDto>();
+        return await response.Content.ReadFromJsonAsync<PozdrikIdDto>();
     }
 
     private async Task<bool> SetPozdrIdToFriendAsync(FriendDTO dto ,int pozdrId)
@@ -78,21 +80,22 @@ public class Service:IFriendService
         return response.IsSuccessStatusCode;
     }
     
-    public async Task<bool> AddWishAndInterestAsync(InterestAndWishDTO dto, FriendDTO friendDto)
+    public async Task<bool> AddWishAndInterestAsync(AddIntAndPozhDto dto, FriendDTO friendDto)
     {
         PozdrikIdDto? pozdrikIdDto = await CreateWishIdAsync(dto);
-
-        if (pozdrikIdDto != null) dto.IdWish = pozdrikIdDto._pozdrikId;
-        else
+        
+        if (pozdrikIdDto == null || !pozdrikIdDto._pozdrikId.HasValue)
         {
-            throw new Exception("PozdrikIdDto is null");
+            throw new Exception("PozdrikIdDto is null or does not have a value");
         }
+        dto.IdPozdr = pozdrikIdDto._pozdrikId.Value;
 
-        var json= JsonSerializer.Serialize(dto);
-        var content=new StringContent(json,Encoding.UTF8,"application/json");
-        var response=await _httpClient.PostAsync($"{_baseUrl}/api/Friends/pozdrik/add",content);
-        var secondOperation = await SetPozdrIdToFriendAsync(friendDto, dto.IdWish.Value);
-        return response.IsSuccessStatusCode && secondOperation;
+
+        // var json= JsonSerializer.Serialize(dto);
+        // var content=new StringContent(json,Encoding.UTF8,"application/json");
+        // var response=await _httpClient.PostAsync($"{_baseUrl}/api/Friends/pozdrik/add",content);
+        var secondOperation = await SetPozdrIdToFriendAsync(friendDto, dto.IdPozdr);
+        return /*pozdrikIdDto!=null && */secondOperation;
     }
 
     public async Task<List<FriendDTO>> GetFriendsAsync(AppIdDTO dto)
@@ -105,6 +108,11 @@ public class Service:IFriendService
         var json=await response.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<List<FriendDTO>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
     }
+
+    public async Task<bool> AddFriendWithWishAsync(AddFriendWithWishDTO dto)
+    {
+        var resposne= await _httpClient.PostAsJsonAsync($"{_baseUrl}/api/Friends/pozdrik/addWithWish",dto);
+        return resposne.IsSuccessStatusCode;
+    }
     
-    
-}
+} 

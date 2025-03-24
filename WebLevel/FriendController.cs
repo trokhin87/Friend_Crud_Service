@@ -37,7 +37,7 @@ public class FriendController:ControllerBase
     {
         var friends = await _friendService.GetFriendsAsync(new AppIdDTO { Id = appId });
         if (friends.Count == 0)
-        {
+        {   
             return NotFound(new { message = "No friends found for the provided appId" });
         }
         return Ok(friends);
@@ -46,39 +46,9 @@ public class FriendController:ControllerBase
       [HttpPost("addWithWish")]
     public async Task<IActionResult> AddFriendWithWish([FromBody] AddFriendWithWishDTO request)
     {
-        var addFriendResult = await _friendService.AddFriendAsync(request.Friend);
-        if (!addFriendResult)
-        {
-            return BadRequest(new { message = "Failed to add friend" });
-        }
+        var result = await _friendService.AddFriendWithWishAsync(request);
+        return result ? Ok(new { message = "Friend added successfully" }) : BadRequest(new { message = "Failed to update friend" });
 
-        // Шаг 2: Получение WishId по Username и AppID
-        var wishIdDto = await _friendService.GetWishIdAsync(new AppIDFriendDTO
-        {
-            Username = request.Friend.FriendUsername, // Предполагаем, что FriendDTO содержит поле Username
-            AppID = request.Friend.AppId // И поле AppID
-        });
-
-        if (wishIdDto?.IdWish == null)
-        {
-            return NotFound(new { message = "Wish ID not found" });
-        }
-        // Шаг 3: Добавление интересов и пожеланий
-        var interestAndWishDto = new InterestAndWishDTO
-        {
-            IdWish = wishIdDto.IdWish, // Предполагаем, что WishIdDTO содержит поле WishId
-            Interest = request.Wish.Interest,
-            Wish = request.Wish.Wish
-        };
-
-        var addWishResult = await _friendService.AddWishAndInterestAsync(interestAndWishDto, request.Friend);
-        if (!addWishResult)
-        {
-            return BadRequest(new { message = "Failed to add wish and interest" });
-        }
-
-        // Возвращаем успешный результат
-        return Ok(new { message = "Friend added, wish ID retrieved, and wish/interest added successfully" });
     }
 
     
