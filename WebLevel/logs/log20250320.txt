@@ -1,0 +1,179 @@
+2025-03-20 01:07:13.988 +03:00 [INF] Now listening on: http://localhost:5162
+2025-03-20 01:07:14.018 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-20 01:07:14.019 +03:00 [INF] Hosting environment: Development
+2025-03-20 01:07:14.020 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\Friend_Crud_Service\WebLevel
+2025-03-20 01:07:19.018 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/ - null null
+2025-03-20 01:07:19.057 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-20 01:07:19.061 +03:00 [INF] HTTP GET / responded 404 in 5.3734 ms
+2025-03-20 01:07:19.074 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/ - 404 0 null 56.2009ms
+2025-03-20 01:07:19.080 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5162/, Response status code: 404
+2025-03-20 01:07:22.846 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger - null null
+2025-03-20 01:07:22.852 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger - 301 0 null 6.0478ms
+2025-03-20 01:07:22.854 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/index.html - null null
+2025-03-20 01:07:22.905 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/index.html - 200 null text/html;charset=utf-8 50.8017ms
+2025-03-20 01:07:23.017 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/swagger-ui.css - null null
+2025-03-20 01:07:23.033 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-20 01:07:23.036 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/swagger-ui.css - 200 154948 text/css 18.4941ms
+2025-03-20 01:07:23.081 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/index.css - null null
+2025-03-20 01:07:23.081 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/swagger-ui-standalone-preset.js - null null
+2025-03-20 01:07:23.081 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/index.js - null null
+2025-03-20 01:07:23.081 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/swagger-ui-bundle.js - null null
+2025-03-20 01:07:23.083 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-20 01:07:23.086 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/index.js - 200 null application/javascript;charset=utf-8 4.4584ms
+2025-03-20 01:07:23.087 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/index.css - 200 202 text/css 6.3489ms
+2025-03-20 01:07:23.093 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-20 01:07:23.093 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 12.2191ms
+2025-03-20 01:07:23.102 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-20 01:07:23.102 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/swagger-ui-bundle.js - 200 1466324 text/javascript 21.1288ms
+2025-03-20 01:07:23.328 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/v1/swagger.json - null null
+2025-03-20 01:07:23.349 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/favicon-32x32.png - null null
+2025-03-20 01:07:23.351 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-03-20 01:07:23.352 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/favicon-32x32.png - 200 628 image/png 3.0073ms
+2025-03-20 01:07:23.407 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 79.2218ms
+2025-03-20 01:08:08.114 +03:00 [INF] Application is shutting down...
+2025-03-20 01:10:56.483 +03:00 [INF] Now listening on: http://localhost:5162
+2025-03-20 01:10:56.510 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-20 01:10:56.511 +03:00 [INF] Hosting environment: Development
+2025-03-20 01:10:56.512 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\Friend_Crud_Service\WebLevel
+2025-03-20 01:11:07.643 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/ - null null
+2025-03-20 01:11:07.670 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-20 01:11:07.675 +03:00 [INF] HTTP GET / responded 404 in 5.3282 ms
+2025-03-20 01:11:07.684 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/ - 404 0 null 42.3137ms
+2025-03-20 01:11:07.691 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5162/, Response status code: 404
+2025-03-20 01:11:11.426 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/index.html - null null
+2025-03-20 01:11:11.474 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/index.html - 200 null text/html;charset=utf-8 48.6757ms
+2025-03-20 01:11:11.631 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/index.js - null null
+2025-03-20 01:11:11.634 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/index.js - 200 null application/javascript;charset=utf-8 2.9701ms
+2025-03-20 01:11:11.837 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/swagger/v1/swagger.json - null null
+2025-03-20 01:11:11.911 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.1445ms
+2025-03-20 01:11:28.825 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5162/api/Friend/add - application/json 132
+2025-03-20 01:11:28.829 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.AddFriend (WebLevel)'
+2025-03-20 01:11:28.843 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(DTO.FriendDTO) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:11:28.890 +03:00 [INF] Executing action method WebLevel.FriendController.AddFriend (WebLevel) - Validation state: "Valid"
+2025-03-20 01:11:28.902 +03:00 [INF] Start processing HTTP request POST http://localhost:5010/api/Friends/add
+2025-03-20 01:11:28.903 +03:00 [INF] Sending HTTP request POST http://localhost:5010/api/Friends/add
+2025-03-20 01:11:30.750 +03:00 [INF] Received HTTP response headers after 1844.5557ms - 200
+2025-03-20 01:11:30.752 +03:00 [INF] End processing HTTP request after 1852.3358ms - 200
+2025-03-20 01:11:30.763 +03:00 [INF] Executed action method WebLevel.FriendController.AddFriend (WebLevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1869.026ms.
+2025-03-20 01:11:30.769 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:11:30.778 +03:00 [INF] Executed action WebLevel.FriendController.AddFriend (WebLevel) in 1930.9613ms
+2025-03-20 01:11:30.779 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.AddFriend (WebLevel)'
+2025-03-20 01:11:30.781 +03:00 [INF] HTTP POST /api/Friend/add responded 200 in 1952.5584 ms
+2025-03-20 01:11:30.784 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5162/api/Friend/add - 200 null application/json; charset=utf-8 1958.7776ms
+2025-03-20 01:12:08.992 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5162/api/Friend/delete - application/json 73
+2025-03-20 01:12:08.994 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.RemoveFriend (WebLevel)'
+2025-03-20 01:12:08.998 +03:00 [INF] Route matched with {action = "RemoveFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveFriend(DTO.RemoveFriendDTO) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:12:09.002 +03:00 [INF] Executing action method WebLevel.FriendController.RemoveFriend (WebLevel) - Validation state: "Valid"
+2025-03-20 01:12:09.004 +03:00 [INF] Start processing HTTP request DELETE http://localhost:5010/api/Friends/delete/
+2025-03-20 01:12:09.005 +03:00 [INF] Sending HTTP request DELETE http://localhost:5010/api/Friends/delete/
+2025-03-20 01:12:09.040 +03:00 [INF] Received HTTP response headers after 34.3893ms - 415
+2025-03-20 01:12:09.041 +03:00 [INF] End processing HTTP request after 36.4644ms - 415
+2025-03-20 01:12:09.043 +03:00 [INF] Executed action method WebLevel.FriendController.RemoveFriend (WebLevel), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 39.7379ms.
+2025-03-20 01:12:09.044 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:12:09.045 +03:00 [INF] Executed action WebLevel.FriendController.RemoveFriend (WebLevel) in 45.4419ms
+2025-03-20 01:12:09.045 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.RemoveFriend (WebLevel)'
+2025-03-20 01:12:09.046 +03:00 [INF] HTTP DELETE /api/Friend/delete responded 400 in 52.5249 ms
+2025-03-20 01:12:09.047 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5162/api/Friend/delete - 400 null application/json; charset=utf-8 55.3515ms
+2025-03-20 01:12:10.246 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5162/api/Friend/delete - application/json 73
+2025-03-20 01:12:10.247 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.RemoveFriend (WebLevel)'
+2025-03-20 01:12:10.248 +03:00 [INF] Route matched with {action = "RemoveFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveFriend(DTO.RemoveFriendDTO) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:12:10.250 +03:00 [INF] Executing action method WebLevel.FriendController.RemoveFriend (WebLevel) - Validation state: "Valid"
+2025-03-20 01:12:10.251 +03:00 [INF] Start processing HTTP request DELETE http://localhost:5010/api/Friends/delete/
+2025-03-20 01:12:10.251 +03:00 [INF] Sending HTTP request DELETE http://localhost:5010/api/Friends/delete/
+2025-03-20 01:12:10.260 +03:00 [INF] Received HTTP response headers after 8.3335ms - 415
+2025-03-20 01:12:10.261 +03:00 [INF] End processing HTTP request after 10.3763ms - 415
+2025-03-20 01:12:10.263 +03:00 [INF] Executed action method WebLevel.FriendController.RemoveFriend (WebLevel), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 12.0858ms.
+2025-03-20 01:12:10.264 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:12:10.264 +03:00 [INF] Executed action WebLevel.FriendController.RemoveFriend (WebLevel) in 15.3944ms
+2025-03-20 01:12:10.265 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.RemoveFriend (WebLevel)'
+2025-03-20 01:12:10.266 +03:00 [INF] HTTP DELETE /api/Friend/delete responded 400 in 18.6521 ms
+2025-03-20 01:12:10.267 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5162/api/Friend/delete - 400 null application/json; charset=utf-8 21.2658ms
+2025-03-20 01:12:11.560 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5162/api/Friend/delete - application/json 73
+2025-03-20 01:12:11.562 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.RemoveFriend (WebLevel)'
+2025-03-20 01:12:11.562 +03:00 [INF] Route matched with {action = "RemoveFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveFriend(DTO.RemoveFriendDTO) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:12:11.564 +03:00 [INF] Executing action method WebLevel.FriendController.RemoveFriend (WebLevel) - Validation state: "Valid"
+2025-03-20 01:12:11.565 +03:00 [INF] Start processing HTTP request DELETE http://localhost:5010/api/Friends/delete/
+2025-03-20 01:12:11.565 +03:00 [INF] Sending HTTP request DELETE http://localhost:5010/api/Friends/delete/
+2025-03-20 01:12:11.572 +03:00 [INF] Received HTTP response headers after 5.5372ms - 415
+2025-03-20 01:12:11.572 +03:00 [INF] End processing HTTP request after 7.8887ms - 415
+2025-03-20 01:12:11.574 +03:00 [INF] Executed action method WebLevel.FriendController.RemoveFriend (WebLevel), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 9.4881ms.
+2025-03-20 01:12:11.575 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:12:11.576 +03:00 [INF] Executed action WebLevel.FriendController.RemoveFriend (WebLevel) in 12.4551ms
+2025-03-20 01:12:11.577 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.RemoveFriend (WebLevel)'
+2025-03-20 01:12:11.577 +03:00 [INF] HTTP DELETE /api/Friend/delete responded 400 in 15.5235 ms
+2025-03-20 01:12:11.578 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5162/api/Friend/delete - 400 null application/json; charset=utf-8 17.9973ms
+2025-03-20 01:12:16.901 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5162/api/Friend/delete - application/json 73
+2025-03-20 01:12:16.903 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.RemoveFriend (WebLevel)'
+2025-03-20 01:12:16.903 +03:00 [INF] Route matched with {action = "RemoveFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveFriend(DTO.RemoveFriendDTO) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:12:16.905 +03:00 [INF] Executing action method WebLevel.FriendController.RemoveFriend (WebLevel) - Validation state: "Valid"
+2025-03-20 01:12:16.906 +03:00 [INF] Start processing HTTP request DELETE http://localhost:5010/api/Friends/delete/
+2025-03-20 01:12:16.906 +03:00 [INF] Sending HTTP request DELETE http://localhost:5010/api/Friends/delete/
+2025-03-20 01:12:16.912 +03:00 [INF] Received HTTP response headers after 4.9261ms - 415
+2025-03-20 01:12:16.913 +03:00 [INF] End processing HTTP request after 7.0707ms - 415
+2025-03-20 01:12:16.914 +03:00 [INF] Executed action method WebLevel.FriendController.RemoveFriend (WebLevel), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 8.7415ms.
+2025-03-20 01:12:16.915 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:12:16.916 +03:00 [INF] Executed action WebLevel.FriendController.RemoveFriend (WebLevel) in 11.6407ms
+2025-03-20 01:12:16.917 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.RemoveFriend (WebLevel)'
+2025-03-20 01:12:16.918 +03:00 [INF] HTTP DELETE /api/Friend/delete responded 400 in 14.9259 ms
+2025-03-20 01:12:16.919 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5162/api/Friend/delete - 400 null application/json; charset=utf-8 17.86ms
+2025-03-20 01:12:45.864 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5162/api/Friend/update - application/json 131
+2025-03-20 01:12:45.865 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.UpdateFriend (WebLevel)'
+2025-03-20 01:12:45.869 +03:00 [INF] Route matched with {action = "UpdateFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateFriend(DTO.FriendDTO) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:12:45.870 +03:00 [INF] Executing action method WebLevel.FriendController.UpdateFriend (WebLevel) - Validation state: "Valid"
+2025-03-20 01:12:45.872 +03:00 [INF] Start processing HTTP request PUT http://localhost:5010/api/Friends/update
+2025-03-20 01:12:45.873 +03:00 [INF] Sending HTTP request PUT http://localhost:5010/api/Friends/update
+2025-03-20 01:12:46.200 +03:00 [INF] Received HTTP response headers after 326.1817ms - 200
+2025-03-20 01:12:46.200 +03:00 [INF] End processing HTTP request after 328.1226ms - 200
+2025-03-20 01:12:46.202 +03:00 [INF] Executed action method WebLevel.FriendController.UpdateFriend (WebLevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 330.9945ms.
+2025-03-20 01:12:46.203 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:12:46.204 +03:00 [INF] Executed action WebLevel.FriendController.UpdateFriend (WebLevel) in 333.9605ms
+2025-03-20 01:12:46.204 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.UpdateFriend (WebLevel)'
+2025-03-20 01:12:46.205 +03:00 [INF] HTTP PUT /api/Friend/update responded 200 in 339.7944 ms
+2025-03-20 01:12:46.206 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5162/api/Friend/update - 200 null application/json; charset=utf-8 341.9694ms
+2025-03-20 01:12:47.451 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5162/api/Friend/update - application/json 131
+2025-03-20 01:12:47.453 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.UpdateFriend (WebLevel)'
+2025-03-20 01:12:47.454 +03:00 [INF] Route matched with {action = "UpdateFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateFriend(DTO.FriendDTO) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:12:47.455 +03:00 [INF] Executing action method WebLevel.FriendController.UpdateFriend (WebLevel) - Validation state: "Valid"
+2025-03-20 01:12:47.456 +03:00 [INF] Start processing HTTP request PUT http://localhost:5010/api/Friends/update
+2025-03-20 01:12:47.456 +03:00 [INF] Sending HTTP request PUT http://localhost:5010/api/Friends/update
+2025-03-20 01:12:47.497 +03:00 [INF] Received HTTP response headers after 40.3413ms - 200
+2025-03-20 01:12:47.498 +03:00 [INF] End processing HTTP request after 42.3791ms - 200
+2025-03-20 01:12:47.500 +03:00 [INF] Executed action method WebLevel.FriendController.UpdateFriend (WebLevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 44.2107ms.
+2025-03-20 01:12:47.501 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:12:47.502 +03:00 [INF] Executed action WebLevel.FriendController.UpdateFriend (WebLevel) in 46.9417ms
+2025-03-20 01:12:47.502 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.UpdateFriend (WebLevel)'
+2025-03-20 01:12:47.503 +03:00 [INF] HTTP PUT /api/Friend/update responded 200 in 49.9579 ms
+2025-03-20 01:12:47.504 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5162/api/Friend/update - 200 null application/json; charset=utf-8 52.4379ms
+2025-03-20 01:13:07.932 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5162/api/Friend/list/9f5b4887-b170-4d11-b0a5-93cc285bd2bb - null null
+2025-03-20 01:13:07.934 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.GetFriendsByAppId (WebLevel)'
+2025-03-20 01:13:07.937 +03:00 [INF] Route matched with {action = "GetFriendsByAppId", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFriendsByAppId(System.Guid) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:13:07.938 +03:00 [INF] Executing action method WebLevel.FriendController.GetFriendsByAppId (WebLevel) - Validation state: "Valid"
+2025-03-20 01:13:07.941 +03:00 [INF] Start processing HTTP request GET http://localhost:5010/api/Friends/list/9f5b4887-b170-4d11-b0a5-93cc285bd2bb
+2025-03-20 01:13:07.941 +03:00 [INF] Sending HTTP request GET http://localhost:5010/api/Friends/list/9f5b4887-b170-4d11-b0a5-93cc285bd2bb
+2025-03-20 01:13:08.055 +03:00 [INF] Received HTTP response headers after 112.5849ms - 200
+2025-03-20 01:13:08.055 +03:00 [INF] End processing HTTP request after 114.7797ms - 200
+2025-03-20 01:13:08.065 +03:00 [INF] Executed action method WebLevel.FriendController.GetFriendsByAppId (WebLevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 125.6837ms.
+2025-03-20 01:13:08.066 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DTO.FriendDTO, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-20 01:13:08.067 +03:00 [INF] Executed action WebLevel.FriendController.GetFriendsByAppId (WebLevel) in 129.592ms
+2025-03-20 01:13:08.068 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.GetFriendsByAppId (WebLevel)'
+2025-03-20 01:13:08.069 +03:00 [INF] HTTP GET /api/Friend/list/9f5b4887-b170-4d11-b0a5-93cc285bd2bb responded 200 in 134.8482 ms
+2025-03-20 01:13:08.070 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5162/api/Friend/list/9f5b4887-b170-4d11-b0a5-93cc285bd2bb - 200 null application/json; charset=utf-8 137.5548ms
+2025-03-20 01:14:14.012 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5162/api/Friend/addWithWish - application/json 235
+2025-03-20 01:14:14.013 +03:00 [INF] Executing endpoint 'WebLevel.FriendController.AddFriendWithWish (WebLevel)'
+2025-03-20 01:14:14.017 +03:00 [INF] Route matched with {action = "AddFriendWithWish", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriendWithWish(DTO.AddFriendWithWishDTO) on controller WebLevel.FriendController (WebLevel).
+2025-03-20 01:14:14.023 +03:00 [INF] Executing action method WebLevel.FriendController.AddFriendWithWish (WebLevel) - Validation state: "Valid"
+2025-03-20 01:14:14.025 +03:00 [INF] Start processing HTTP request POST http://localhost:5010/api/Friends/add
+2025-03-20 01:14:14.025 +03:00 [INF] Sending HTTP request POST http://localhost:5010/api/Friends/add
+2025-03-20 01:14:14.100 +03:00 [INF] Received HTTP response headers after 74.3801ms - 200
+2025-03-20 01:14:14.101 +03:00 [INF] End processing HTTP request after 76.3163ms - 200
+2025-03-20 01:14:14.104 +03:00 [INF] Start processing HTTP request GET http://localhost:5010/Friends/api/pozdrik/zzz/550e8400-e29b-41d4-a716-446655440000
+2025-03-20 01:14:14.104 +03:00 [INF] Sending HTTP request GET http://localhost:5010/Friends/api/pozdrik/zzz/550e8400-e29b-41d4-a716-446655440000
+2025-03-20 01:14:14.108 +03:00 [INF] Received HTTP response headers after 3.6401ms - 404
+2025-03-20 01:14:14.109 +03:00 [INF] End processing HTTP request after 5.5057ms - 404
+2025-03-20 01:14:14.110 +03:00 [INF] Executed action method WebLevel.FriendController.AddFriendWithWish (WebLevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 85.9176ms.
+2025-03-20 01:14:14.111 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:14:14.112 +03:00 [INF] Executed action WebLevel.FriendController.AddFriendWithWish (WebLevel) in 93.7864ms
+2025-03-20 01:14:14.112 +03:00 [INF] Executed endpoint 'WebLevel.FriendController.AddFriendWithWish (WebLevel)'
+2025-03-20 01:14:14.113 +03:00 [INF] HTTP POST /api/Friend/addWithWish responded 404 in 99.5064 ms
+2025-03-20 01:14:14.114 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5162/api/Friend/addWithWish - 404 null application/json; charset=utf-8 101.9208ms
+2025-03-20 01:15:10.736 +03:00 [INF] Application is shutting down...
