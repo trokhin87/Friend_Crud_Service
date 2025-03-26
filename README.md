@@ -72,5 +72,5 @@ dotnet test
 
 ## 6. Контакты и поддержка
 - GitHub: [[репозиторий](https://github.com/trokhin87/Friend_Crud_Service)]
-- Telegram: @support_friend_service
+- Telegram: @m0neylonger
 
