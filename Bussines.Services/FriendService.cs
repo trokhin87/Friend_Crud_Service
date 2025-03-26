@@ -9,22 +9,21 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace Bussines.Services;
 
-public class Service:IFriendService
+public class FriendService:IFriendService
 {
     private readonly HttpClient _httpClient;
-    private readonly string _baseUrl;
 
-    public Service(HttpClient httpClient, IConfiguration configuration)
+    public FriendService(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _baseUrl = configuration["ProxyMicroservice:BaseUrl"];
+
     }
     public async Task<bool> AddFriendAsync(FriendDTO dto)
     {
         var json = JsonSerializer.Serialize(dto);
         var content=new StringContent(json,Encoding.UTF8,"application/json");
         
-        var repsonse= await _httpClient.PostAsync($"{_baseUrl}/api/Friends/add",content);
+        var repsonse= await _httpClient.PostAsync($"/api/Friends/add",content);
         return repsonse.IsSuccessStatusCode;
     }
 
@@ -35,7 +34,7 @@ public class Service:IFriendService
         var request = new HttpRequestMessage
         {
             Method = HttpMethod.Delete,
-            RequestUri = new Uri($"{_baseUrl}/api/Friends/delete"),
+            RequestUri = new Uri($"/api/Friends/delete"),
             Content = content
         };
         var response = await _httpClient.SendAsync(request);
@@ -46,13 +45,13 @@ public class Service:IFriendService
     {
         var json= JsonSerializer.Serialize(dto);
         var content = new StringContent(json,Encoding.UTF8,"application/json");
-        var response= await _httpClient.PutAsync($"{_baseUrl}/api/Friends/update",content);
+        var response= await _httpClient.PutAsync($"/api/Friends/update",content);
         return response.IsSuccessStatusCode;
     }
 
     public async Task<WishIdDTO> GetWishIdAsync(AppIDFriendDTO dto)
     {
-        var response= await _httpClient.GetAsync($"{_baseUrl}/Friends/api/pozdrik/{dto.Username}/{dto.AppID}");
+        var response= await _httpClient.GetAsync($"/Friends/api/pozdrik/{dto.Username}/{dto.AppID}");
         if (!response.IsSuccessStatusCode)
         {
             return null;
@@ -64,7 +63,7 @@ public class Service:IFriendService
     //добавляются интересы и пожелания, отдают id поздрика
     private async Task<PozdrikIdDto?> CreateWishIdAsync(AddIntAndPozhDto dto)
     {
-        var response =await _httpClient.PostAsJsonAsync(_baseUrl + "/api/Friends/pozdrik/create",dto);
+        var response =await _httpClient.PostAsJsonAsync("/api/Friends/pozdrik/create",dto);
         if (!response.IsSuccessStatusCode)
         {
             return null;
@@ -76,7 +75,7 @@ public class Service:IFriendService
     private async Task<bool> SetPozdrIdToFriendAsync(FriendDTO dto ,int pozdrId)
     {
         AddPozdrIdDto addPozdrIdDto = new AddPozdrIdDto {AppId = dto.AppId,FriendUsername = dto.FriendUsername,PozdrikId = pozdrId};
-        var response=await  _httpClient.PostAsJsonAsync(_baseUrl + "/api/Friends/SetpozdrId",addPozdrIdDto);
+        var response=await  _httpClient.PostAsJsonAsync( "/api/Friends/SetpozdrId",addPozdrIdDto);
         return response.IsSuccessStatusCode;
     }
     
@@ -100,7 +99,7 @@ public class Service:IFriendService
 
     public async Task<List<FriendDTO>> GetFriendsAsync(AppIdDTO dto)
     {
-        var response=await  _httpClient.GetAsync($"{_baseUrl}/api/Friends/list/{dto.Id}");
+        var response=await  _httpClient.GetAsync($"/api/Friends/list/{dto.Id}");
         if (!response.IsSuccessStatusCode)
         {
             return new List<FriendDTO>();
@@ -111,7 +110,7 @@ public class Service:IFriendService
 
     public async Task<bool> AddFriendWithWishAsync(AddFriendWithWishDTO dto)
     {
-        var resposne= await _httpClient.PostAsJsonAsync($"{_baseUrl}/api/Friends/pozdrik/addWithWish",dto);
+        var resposne= await _httpClient.PostAsJsonAsync($"/api/Friends/pozdrik/addWithWish",dto);
         return resposne.IsSuccessStatusCode;
     }
     

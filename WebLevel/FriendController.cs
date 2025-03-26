@@ -1,5 +1,6 @@
 ﻿using Bussines.Services;
 using DTO;
+using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -9,11 +10,11 @@ namespace WebLevel;
 [Route("api/[controller]")]
 public class FriendController : ControllerBase
 {
-    private readonly Service _friendService;
+    private readonly IFriendService _friendFriendService;
 
-    public FriendController(Service friendService)
+    public FriendController(IFriendService friendFriendService)
     {
-        _friendService = friendService;
+        _friendFriendService = friendFriendService;
     }
 
     /// <summary>
@@ -25,7 +26,7 @@ public class FriendController : ControllerBase
     [SwaggerResponse(400, "Ошибка при добавлении друга")]
     public async Task<IActionResult> AddFriend([FromBody] FriendDTO dto)
     {
-        var result = await _friendService.AddFriendAsync(dto);
+        var result = await _friendFriendService.AddFriendAsync(dto);
         return result ? Ok(new { message = "Friend added successfully" }) : BadRequest(new { message = "Failed to add friend" });
     }
 
@@ -38,7 +39,7 @@ public class FriendController : ControllerBase
     [SwaggerResponse(400, "Ошибка при удалении друга")]
     public async Task<IActionResult> RemoveFriend([FromBody] DeleteFriendDto deleteFriendDto)
     {
-        var result = await _friendService.RemoveFriendAsync(deleteFriendDto);
+        var result = await _friendFriendService.RemoveFriendAsync(deleteFriendDto);
         return result ? Ok(new { message = "Friend removed successfully" }) : BadRequest(new { message = "Failed to remove friend" });
     }
 
@@ -51,7 +52,7 @@ public class FriendController : ControllerBase
     [SwaggerResponse(400, "Ошибка при обновлении")]
     public async Task<IActionResult> UpdateFriend([FromBody] FriendDTO friendDto)
     {
-        var result = await _friendService.UpdateFriendAsync(friendDto);
+        var result = await _friendFriendService.UpdateFriendAsync(friendDto);
         return result ? Ok(new { message = "Friend updated successfully" }) : BadRequest(new { message = "Failed to update friend" });
     }
 
@@ -64,7 +65,7 @@ public class FriendController : ControllerBase
     [SwaggerResponse(404, "Друзья не найдены")]
     public async Task<IActionResult> GetFriendsByAppId(Guid appId)
     {
-        var friends = await _friendService.GetFriendsAsync(new AppIdDTO { Id = appId });
+        var friends = await _friendFriendService.GetFriendsAsync(new AppIdDTO { Id = appId });
         if (friends.Count == 0)
         {
             return NotFound(new { message = "No friends found for the provided appId" });
@@ -81,7 +82,7 @@ public class FriendController : ControllerBase
     [SwaggerResponse(400, "Ошибка при добавлении")]
     public async Task<IActionResult> AddFriendWithWish([FromBody] AddFriendWithWishDTO request)
     {
-        var result = await _friendService.AddFriendWithWishAsync(request);
+        var result = await _friendFriendService.AddFriendWithWishAsync(request);
         return result ? Ok(new { message = "Friend added successfully" }) : BadRequest(new { message = "Failed to add friend with wish" });
     }
 }

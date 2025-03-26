@@ -10,4 +10,5 @@ public interface IFriendService
     Task<WishIdDTO> GetWishIdAsync(AppIDFriendDTO dto);
     Task<bool> AddWishAndInterestAsync(AddIntAndPozhDto dto, FriendDTO friendDto);
     Task<List<FriendDTO>> GetFriendsAsync(AppIdDTO dto);
+    Task<bool> AddFriendWithWishAsync(AddFriendWithWishDTO dto);
 }

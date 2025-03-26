@@ -1,5 +1,6 @@
 using System.Reflection;
 using Bussines.Services;
+using Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,19 +18,61 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 builder.Host.UseSerilog();
 
+
+string dbProxy = String.Empty;
+if (builder.Environment.IsDevelopment())
+{
+    builder.WebHost.ConfigureKestrel(options =>
+    {
+        options.ListenAnyIP(5015);  
+    });
+    // для обычного запуска
+    var configuration = builder.Configuration;
+    dbProxy = configuration["ProxyMicroservice:BaseUrl"] ?? throw new Exception("DbProxy is missing");
+}
+else
+{
+    builder.WebHost.ConfigureKestrel(options =>
+    {
+        options.ListenAnyIP(8080);  
+    });
+    //докерок
+    dbProxy = Environment.GetEnvironmentVariable("BaseUrl") ?? throw new Exception("DbProxy is missing"); 
+    if (!Uri.IsWellFormedUriString(dbProxy, UriKind.Absolute))
+    {
+       throw new Exception($"DbProxy is not valid: {dbProxy}");
+    }  
+}
+
+builder.Services.AddHttpClient("ProxyApiClient", client =>
+{
+    client.BaseAddress = new Uri(dbProxy); 
+});
+
+builder.Services.AddScoped<IFriendService>(provider =>
+{
+    var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
+    var httpClient = httpClientFactory.CreateClient("ProxyApiClient"); 
+
+    return new FriendService(httpClient);
+});
+
+
+
+// // Регистрация HttpClient (фикс ошибки)
+// builder.Services.AddHttpClient(); 
+// Если сервис использует HttpClient напрямую в конструкторе
+
+
+
+
 // Добавление сервисов
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
-// Регистрация HttpClient (фикс ошибки)
-builder.Services.AddHttpClient(); 
-// Если сервис использует HttpClient напрямую в конструкторе
-builder.Services.AddHttpClient<Service>(); 
-builder.Services.AddSwaggerExamplesFromAssemblies(Assembly.GetExecutingAssembly());
-
 // Регистрация бизнес-логики
-builder.Services.AddScoped<Service>();
+builder.Services.AddSwaggerExamplesFromAssemblies(Assembly.GetExecutingAssembly());
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
