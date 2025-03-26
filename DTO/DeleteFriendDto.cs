@@ -1,7 +1,12 @@
-﻿namespace DTO;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace DTO;
 
 public class DeleteFriendDto
 {
+    [SwaggerSchema("Идентификатор приложения")]
     public Guid AppId { get; set; }
-    public string FriendUsername { get; set; } = null!; 
+
+    [SwaggerSchema("Имя друга")]
+    public string FriendUsername { get; set; } = null!;
 }
