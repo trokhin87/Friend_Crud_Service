@@ -48,7 +48,8 @@ builder.Services.AddHttpClient("ProxyApiClient", client =>
 {
     client.BaseAddress = new Uri(dbProxy); 
 });
-
+//tut dobavil
+builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 builder.Services.AddScoped<IFriendService>(provider =>
 {
     var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
