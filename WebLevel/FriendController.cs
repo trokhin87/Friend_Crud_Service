@@ -7,7 +7,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace WebLevel;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/friend")]
 public class FriendController : ControllerBase
 {
     private readonly IFriendService _friendFriendService;
